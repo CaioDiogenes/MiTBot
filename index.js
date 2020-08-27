@@ -5,7 +5,7 @@ const ax = require('axios');
 
 const base_jikon_url = "https://api.jikan.moe/v3"
 
-client.login("NzQxMjYxODg2NDA2MDAwNjUw.Xy0_7Q.cAERF0wqG5LnslwUeFSQY40HkUQ");
+client.login("Token");
 
 client.on('ready', () => {
     console.log(`Bot online: ${client.user.tag}!`);
@@ -36,7 +36,7 @@ function showOptions(msg) {
 You can use this commands for this moment:
     .clear <number> - to clean x messages
     !anime <name>   - to see some pic about x anime
-    !manga <name>   - temporary disabled               
+    !manga <name>   - to see some pic about x manga               
     `)
 }
 
@@ -50,7 +50,7 @@ function jikanApi(msg) {
 
 async function anime(url, search, msg) {
     try {
-        await ax.get(`${base_jikon_url}/search/${url}?q=${search}&page=1`).then(res => msg.reply(res.data.results[0].image_url));
+        await ax.get(`${base_jikon_url}/search/${url}?q=${search}&page=1`).then(res => msg.channel.send(res.data.results[0].image_url));
     } catch (error) {
         console.error(error);
     }
@@ -58,7 +58,7 @@ async function anime(url, search, msg) {
 
 async function manga(url, search, msg) {
     try {
-        await ax.get(`${base_jikon_url}/search/${url}?q=${search}&page=1`).then(res => msg.reply(res.data.results[0].image_url));
+        await ax.get(`${base_jikon_url}/search/${url}?q=${search}&page=1`).then(res => msg.channel.send(res.data.results[0].image_url));
     } catch (error) {
         console.error(error);
     }
