@@ -1,0 +1,27 @@
+{
+  "name": "mitbot",
+  "version": "1.0.0",
+  "description": "only test",
+  "main": "index.js",
+  "scripts": {
+    "test": "eccho",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "iKaiyo™",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "discord.js": "^12.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaioDiogenes/mitm-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CaioDiogenes/mitm-bot/issues"
+  },
+  "homepage": "https://github.com/CaioDiogenes/mitm-bot#readme"
+}
