@@ -8,4 +8,4 @@ This project is a bot for Discord ( a plataform for gamers )
 
 After this you can change the source code, make your changes and testing with everything thta you wanna.
 
-Note: Remebmer to put the "BoT Token" to have access and can do anything.
+Note: remember to put "Token" to have access.
