@@ -12,27 +12,25 @@ client.on('ready', () => {
 });
 
 client.on("message", msg => {
-    console.log(msg ,' qq msg ')
     if (!msg.author.bot) {
 
         msg.content.startsWith(".commands") ? showOptions(msg) : null
 
-        msg.content.startsWith("!anime") ? jikanApi(msg) : null 
-        msg.content.startsWith("!manga") ? jikanApi(msg) : null 
+        msg.content.startsWith("!anime") ? jikanApi(msg) : null
+        msg.content.startsWith("!manga") ? jikanApi(msg) : null
 
         if (msg.content.startsWith(".clear")) {
-            let num = msg.content.slice(7)
-            msg.reply(`Cleanning ${num} messages, please wait few seconds`)
-            msg.channel.messages.fetch({ limit: num }).then(messages => {
+            let num = parseInt(msg.content.slice(7));
+            msg.channel.messages.fetch({ limit: num + 1 }).then(messages => {
                 msg.channel.bulkDelete(messages)
             });
-            msg.reply("Messages cleaned")
+            msg.channel.send(" ### Messages cleaned ### ");
         }
     }
 })
 
 function showOptions(msg) {
-    msg.reply(`
+    msg.channel.send(`
 You can use this commands for this moment:
     .clear <number> - to clean x messages
     !anime <name>   - to see some pic about x anime
